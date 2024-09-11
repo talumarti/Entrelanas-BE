@@ -1,11 +1,13 @@
 import { Router } from "express";
 import { createClientes, deleteClientes, listClientes, getClientesById, updateClientes } from "../controllers/clientes/clientes_controller";
+import { authenticateToken } from "../middleware/authorization";
+
 
 export const clienteRoutes = Router();
 
 require('dotenv').config();
-
-clienteRoutes.get('/list/clientes', listClientes);
+/*ENDPOINTS:*/
+clienteRoutes.get('/list/clientes',authenticateToken , listClientes);
 clienteRoutes.get('/list/clientes/:id', getClientesById);
 clienteRoutes.post('/createClientes', createClientes);
 clienteRoutes.delete('/deleteClientes/:id', deleteClientes);
