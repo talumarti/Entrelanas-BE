@@ -3,8 +3,10 @@ import { createClientes, deleteClientes, listClientes, getClientesById, updateCl
 
 export const clienteRoutes = Router();
 
-clienteRoutes.get('/list/clientes',listClientes);
-clienteRoutes.get('/list/clientes/:id',getClientesById);
+require('dotenv').config();
+
+clienteRoutes.get('/list/clientes', listClientes);
+clienteRoutes.get('/list/clientes/:id', getClientesById);
 clienteRoutes.post('/createClientes', createClientes);
 clienteRoutes.delete('/deleteClientes/:id', deleteClientes);
 clienteRoutes.put('/updateClientes/:id', updateClientes);
