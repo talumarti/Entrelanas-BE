@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { listClientes } from "../controllers/clientes/clientes_controller";
+import { createClientes, deleteClientes, listClientes, getClientesById, updateClientes } from "../controllers/clientes/clientes_controller";
+
 export const clienteRoutes = Router();
 
 clienteRoutes.get('/list/clientes',listClientes);
+clienteRoutes.get('/list/clientes/:id',getClientesById);
+clienteRoutes.post('/createClientes', createClientes);
+clienteRoutes.delete('/deleteClientes/:id', deleteClientes);
+clienteRoutes.put('/updateClientes/:id', updateClientes);
