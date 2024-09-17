@@ -24,17 +24,17 @@ export const getProductosById = async (req: Request, res: Response): Promise<Res
 }
 
 export const createProductos = async (req: Request, res: Response): Promise<Response> => {
-    const {producto_Id, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id} = req.body;
+    const {productoId, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id} = req.body;
 
-    if (producto_Id !== null){
+    if (productoId !== null){
         try {
             await pool.query('INSERT INTO productos (producto_id, nombre, precio, categoria_id, observacion, proveedor_id) values ($1, $2, $3, $4, $5, $6)',
-                [producto_Id, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id]
+                [productoId, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id]
             );
             return res.status(201).json({
                 message: 'producto creado con exito',
                 producto: {
-                    producto_Id,
+                    productoId,
                     productoNombre,
                     productoPrecio,
                     productoCategoria_id,

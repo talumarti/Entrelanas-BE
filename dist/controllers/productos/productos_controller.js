@@ -38,14 +38,14 @@ const getProductosById = (req, res) => __awaiter(void 0, void 0, void 0, functio
 });
 exports.getProductosById = getProductosById;
 const createProductos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { producto_Id, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id } = req.body;
-    if (producto_Id !== null) {
+    const { productoId, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id } = req.body;
+    if (productoId !== null) {
         try {
-            yield conexion_1.default.query('INSERT INTO productos (producto_id, nombre, precio, categoria_id, observacion, proveedor_id) values ($1, $2, $3, $4, $5, $6)', [producto_Id, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id]);
+            yield conexion_1.default.query('INSERT INTO productos (producto_id, nombre, precio, categoria_id, observacion, proveedor_id) values ($1, $2, $3, $4, $5, $6)', [productoId, productoNombre, productoPrecio, productoCategoria_id, productoObservacion, productoProveedor_id]);
             return res.status(201).json({
                 message: 'producto creado con exito',
                 producto: {
-                    producto_Id,
+                    productoId,
                     productoNombre,
                     productoPrecio,
                     productoCategoria_id,

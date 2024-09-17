@@ -4,7 +4,7 @@ import pool from "../../database/conexion";
 
 export const listCategoria= async (req: Request, res:Response): Promise<Response> =>{
     try {
-        const respuesta:QueryResult=await pool.query('select * from categorias;');
+        const respuesta:QueryResult=await pool.query('SELECT * FROM categorias;');
         return res.json(respuesta.rows);
     } catch (error) {
        console.log(error);

@@ -8,8 +8,8 @@ export const categoriaRoutes = Router();
 require('dotenv').config();
 
 /*ENDPOINTS:*/
-categoriaRoutes.get('/list/categorias',authenticateToken , listCategoria);
-categoriaRoutes.get('/list/categorias/:id',authenticateToken , getCategoriaById);
-categoriaRoutes.post('/createcategorias',authenticateToken , createCategoria);
-categoriaRoutes.delete('/deletecategorias/:id',authenticateToken , deleteCategoria);
-categoriaRoutes.put('/updatecategorias/:id',authenticateToken , updateCategoria);
+categoriaRoutes.get('/list/categorias', listCategoria);
+categoriaRoutes.get('/list/categorias/:id', getCategoriaById);
+categoriaRoutes.post('/createcategorias', createCategoria);
+categoriaRoutes.delete('/deletecategorias/:id', deleteCategoria);
+categoriaRoutes.put('/updatecategorias/:id', updateCategoria);

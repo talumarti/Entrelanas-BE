@@ -16,7 +16,7 @@ exports.updateCategoria = exports.deleteCategoria = exports.createCategoria = ex
 const conexion_1 = __importDefault(require("../../database/conexion"));
 const listCategoria = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const respuesta = yield conexion_1.default.query('select * from categorias;');
+        const respuesta = yield conexion_1.default.query('SELECT * FROM categorias;');
         return res.json(respuesta.rows);
     }
     catch (error) {
