@@ -8,6 +8,7 @@ import { errorHandler } from './middleware/error';
 import { categoriaRoutes } from './routes/categoria_routes';
 import cors from "cors";
 
+
 require('dotenv').config();
 
 const app=express();
